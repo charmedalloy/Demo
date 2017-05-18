@@ -1,8 +1,37 @@
 package com.car;
 
 import javax.persistence.*;
+<<<<<<< HEAD
+//<<<<<<< HEAD
+////deleting-usingStashed
+//=======
+//
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+////changes
+//>>>>>>> origin/Gauri
+//=======
+////changes new
+//>>>>>>> origin/Gauri
+//=======
+////123
+//>>>>>>> origin/Gauri
+=======
+<<<<<<< HEAD
+//deleting-usingStashed
+=======
 
-//changes --commit Anant
+<<<<<<< HEAD
+<<<<<<< HEAD
+//changes
+>>>>>>> origin/Gauri
+=======
+//changes new
+>>>>>>> origin/Gauri
+=======
+//123
+>>>>>>> origin/Gauri
+>>>>>>> 101e129db3cfb1cfb2d48b32c4069e55dda30098
 @Entity
 public class Car {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
