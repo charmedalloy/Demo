@@ -4,11 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.car</groupId>
+<<<<<<< HEAD
 	<artifactId>Demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Demo</name>
+=======
+	<artifactId>demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>demo</name>
+>>>>>>> 101e129db3cfb1cfb2d48b32c4069e55dda30098
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -44,6 +52,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -57,6 +66,8 @@
 
 
 
+=======
+>>>>>>> 101e129db3cfb1cfb2d48b32c4069e55dda30098
 	</dependencies>
 
 	<build>
