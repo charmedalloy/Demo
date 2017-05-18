@@ -2,7 +2,7 @@ package com.car;
 
 import javax.persistence.*;
 
-//changes --aval
+//changes-1
 @Entity
 public class Car {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
