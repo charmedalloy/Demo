@@ -2,7 +2,10 @@ package com.car;
 
 import javax.persistence.*;
 
+
 //changes1 
+
+//conflict test
 @Entity
 public class Car {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
