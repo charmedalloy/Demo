@@ -5,7 +5,11 @@ import javax.persistence.*;
 //deleting-usingStashed
 =======
 
+<<<<<<< HEAD
 //changes
+>>>>>>> origin/Gauri
+=======
+//changes new
 >>>>>>> origin/Gauri
 @Entity
 public class Car {
