@@ -1,0 +1,10 @@
+diff a/src/main/java/com/car/Car.java b/src/main/java/com/car/Car.java	(rejected hunks)
+@@ -2,7 +2,7 @@
+ 
+ import javax.persistence.*;
+ 
+-//changes --aval
++//changes
+ @Entity
+ public class Car {
+     @Id @GeneratedValue(strategy= GenerationType.AUTO)
