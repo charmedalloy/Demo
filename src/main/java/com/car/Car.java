@@ -6,10 +6,14 @@ import javax.persistence.*;
 =======
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //changes
 >>>>>>> origin/Gauri
 =======
 //changes new
+>>>>>>> origin/Gauri
+=======
+//123
 >>>>>>> origin/Gauri
 @Entity
 public class Car {
