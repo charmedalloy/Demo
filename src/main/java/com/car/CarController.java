@@ -30,4 +30,12 @@ public class CarController {
     public List<Car> findSpecific(@RequestParam String make, @RequestParam String year) {
         return carService.find(make, year);
     }
+    @RequestMapping("/id5")
+    public List<Car> nativeQuery() {
+        return carService.nativeQuery();
+    }
+    @RequestMapping("/findOwnerCar")
+    public List<Car> findOwnerCar(@RequestParam int id) {
+        return carService.findOwner(id);
+    }
 }

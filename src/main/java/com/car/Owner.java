@@ -8,30 +8,25 @@ import javax.persistence.Id;
 @Entity
 public class Owner {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private int ownerid;
     private String name;
+    
+    
+	public Owner() {
+		super();
+	}
+	public int getOwnerid() {
+		return ownerid;
+	}
+	public void setOwnerid(int ownerid) {
+		this.ownerid = ownerid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Owner() {
-    }
-
-    public Owner(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+   
 }

@@ -1,6 +1,7 @@
 package com.car;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,8 +24,13 @@ public class CarService {
     }
 
     public List<Car> find(String make, String year) {
-//        return carRepo.findByMakeInAndYearIn(make, year);
-
-        return carRepo.findCar();
+       return carRepo.findByMakeInAndYearIn(make, year);
     }
+
+	public List<Car> nativeQuery() {
+		return carRepo.findCar();
+	}
+	public List<Car> findOwner(int ownerid) {
+		return carRepo.findOwner(ownerid);
+	}
 }
