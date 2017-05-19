@@ -3,6 +3,7 @@ package com.car;
 import javax.persistence.*;
 import javax.swing.text.html.Option;
 
+//changes --aval
 @Entity
 public class Car {
     @Id
@@ -76,6 +77,4 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-
-
 }
