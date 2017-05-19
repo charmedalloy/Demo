@@ -1,29 +1,33 @@
 package com.car;
 
 import javax.persistence.*;
+import javax.swing.text.html.Option;
 
-//changes --aval
 @Entity
 public class Car {
-    @Id @GeneratedValue(strategy= GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String make;
     private String model;
     private String year;
     private String color;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "ownerId", referencedColumnName = "ownerId")
     private Owner owner;
 
-    public Car(int id, String make, String model, String year, String color){
-        this.id = id;
+    public Car(String make, String model, String year, String color, Owner owner) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.color = color;
+        this.owner = owner;
     }
 
-    public Car(){}
+    public Car() {
+        super();
+    }
 
     public int getId() {
         return id;
@@ -57,6 +61,14 @@ public class Car {
         this.year = year;
     }
 
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     public String getColor() {
         return color;
     }
@@ -64,4 +76,6 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
+
+
 }

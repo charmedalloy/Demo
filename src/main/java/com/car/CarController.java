@@ -9,25 +9,30 @@ import java.util.List;
 public class CarController {
 
     @Autowired
-    private CarService carService;
+    private CarService service;
 
     @RequestMapping("/")
     public String home() {
         return "ok!!";
     }
 
-    @RequestMapping("/Cars")
+    @RequestMapping("/cars")
     public List<Car> getAllCars() {
-        return carService.getAllCars();
+        return service.getAllCars();
     }
 
-    @PostMapping("/Car")
+    @PostMapping("/car")
     public void addCar(@RequestBody Car car) {
-        carService.addCar(car);
+        service.addCar(car);
     }
 
     @RequestMapping("/find")
     public List<Car> findSpecific(@RequestParam String make, @RequestParam String year) {
-        return carService.find(make, year);
+        return service.find(make, year);
+    }
+
+    @GetMapping("/owners/{id}/cars")
+    public List<Car> getAllOwners(@PathVariable String id ) {
+        return service.getAllOwners(id);
     }
 }

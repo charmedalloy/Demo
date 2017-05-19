@@ -10,7 +10,7 @@ import java.util.List;
 public interface CarRepository extends CrudRepository<Car,String> {
 
     public List<Car> findByMakeInAndYearIn(String make, String year);
-
-    @Query(nativeQuery=true, value="SELECT * FROM Car c where c.id < 5")
+    @Query(nativeQuery=true, value="SELECT * FROM Owner o where c.id < 5")
     public List<Car> findCar();
+
 }

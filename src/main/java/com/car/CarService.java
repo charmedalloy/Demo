@@ -11,6 +11,8 @@ public class CarService {
 
     @Autowired
     private CarRepository carRepo;
+    @Autowired
+    private OwnerRepository ownerRepo;
 
     public List<Car> getAllCars() {
         List<Car> cars = new ArrayList<>();
@@ -24,7 +26,13 @@ public class CarService {
 
     public List<Car> find(String make, String year) {
 //        return carRepo.findByMakeInAndYearIn(make, year);
-
         return carRepo.findCar();
     }
+
+    public List<Car> getAllOwners(String id) {
+        List<Car> cars = new ArrayList<>();
+        ownerRepo.getCars(id).forEach(cars::add);
+        return cars;
+    }
 }
+
