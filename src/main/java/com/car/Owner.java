@@ -4,27 +4,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Owner {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private int ownerid;
     private String name;
 
     public Owner() {
     }
 
-    public Owner(int id, String name) {
-        this.id = id;
+    public Owner(String name) {
+     
         this.name = name;
     }
-
-    public int getId() {
-        return id;
+    
+    @OneToMany(mappedBy="Car")
+    public int getOwnerid() {
+        return ownerid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOwnerId(int ownerId) {
+        this.ownerid = ownerId;
     }
 
     public String getName() {
