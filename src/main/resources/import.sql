@@ -1,9 +1,9 @@
 
-
 INSERT INTO Owner( name) VALUES ('Anant');
 INSERT INTO Owner( name) VALUES ('Gauri');
 INSERT INTO Owner( name) VALUES ('Ryan');
 INSERT INTO Owner( name) VALUES ('Aval');
+
 
 
 INSERT INTO Car(make, model, year, color,ownerid) VALUES ('a', 'b', '2000', 'd',1);

@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface OwnerRepository extends CrudRepository<Owner, String> {
 
-    @Query(nativeQuery = true, value = "SELECT c.make,c.year,o.name FROM Car c,Owner o WHERE c.ownerId = o.OwnerId AND c.ownerId =?0")
-    public List<Car> getCars(String id);
+    @Query(nativeQuery = true, value = "SELECT c.make,c.year,o.name FROM Car c,Owner o WHERE c.ownerid = o.Ownerid AND c.ownerid =?")
+    public List<Object> getCars(String id);
 }

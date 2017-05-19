@@ -1,22 +1,30 @@
 package com.car;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Owner {
-    @Id @GeneratedValue(strategy= GenerationType.AUTO)
-    private int ownerId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int ownerid;
     private String name;
 
     public Owner() {
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public Owner(String name) {
+        this.name = name;
+    }
+
+    public int getOwnerid() {
+        return ownerid;
     }
 
     public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
+        this.ownerid = ownerid;
     }
 
     public String getName() {
@@ -27,9 +35,5 @@ public class Owner {
         this.name = name;
     }
 
-    public Owner(String name) {
-
-        this.name = name;
-    }
 
 }

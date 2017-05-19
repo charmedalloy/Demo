@@ -32,7 +32,7 @@ public class CarController {
     }
 
     @GetMapping("/owners/{id}/cars")
-    public List<Car> getAllOwners(@PathVariable String id ) {
+    public List<Object> getAllOwners(@PathVariable String id ) {
         return service.getAllOwners(id);
     }
 }

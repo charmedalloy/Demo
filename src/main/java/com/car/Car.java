@@ -1,13 +1,12 @@
 package com.car;
 
-import javax.persistence.*;
-import javax.swing.text.html.Option;
 
-//changes --aval
+import javax.persistence.*;
+
 @Entity
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String make;
     private String model;
@@ -15,66 +14,68 @@ public class Car {
     private String color;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "ownerId", referencedColumnName = "ownerId")
+    @JoinColumn(name = "ownerid", referencedColumnName = "ownerid")
     private Owner owner;
-
-    public Car(String make, String model, String year, String color, Owner owner) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.color = color;
-        this.owner = owner;
-    }
-
+    
     public Car() {
-        super();
-    }
+		super();
+	}
 
-    public int getId() {
-        return id;
-    }
+	public Car(int id, String make, String model, String year, String color, Owner owner) {
+		super();
+		this.id = id;
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.color = color;
+		this.owner = owner;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getMake() {
-        return make;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setMake(String make) {
-        this.make = make;
-    }
+	public String getMake() {
+		return make;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public void setMake(String make) {
+		this.make = make;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public String getYear() {
-        return year;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public void setYear(String year) {
-        this.year = year;
-    }
+	public String getYear() {
+		return year;
+	}
 
-    public Owner getOwner() {
-        return owner;
-    }
+	public void setYear(String year) {
+		this.year = year;
+	}
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
+	public String getColor() {
+		return color;
+	}
 
-    public String getColor() {
-        return color;
-    }
+	public void setColor(String color) {
+		this.color = color;
+	}
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+	public Owner getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Owner owner) {
+		this.owner = owner;
+	}
 }

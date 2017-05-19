@@ -29,8 +29,8 @@ public class CarService {
         return carRepo.findCar();
     }
 
-    public List<Car> getAllOwners(String id) {
-        List<Car> cars = new ArrayList<>();
+    public List<Object> getAllOwners(String id) {
+        List<Object> cars = new ArrayList<>();
         ownerRepo.getCars(id).forEach(cars::add);
         return cars;
     }
