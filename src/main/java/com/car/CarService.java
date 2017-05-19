@@ -6,12 +6,17 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 @Service
 public class CarService {
 
     @Autowired
     private CarRepository carRepo;
 
+    @PersistenceContext	
+	private EntityManager entityM;
     public List<Car> getAllCars() {
         List<Car> cars = new ArrayList<>();
         carRepo.findAll().forEach(cars::add);
@@ -27,4 +32,15 @@ public class CarService {
 
         return carRepo.findCar();
     }
+    
+    public List<Car> findCarByOwner(int ownerId) {
+
+        return carRepo.findByOwnerId(ownerId);
+    }
+    
+    public List<Car> findCarByOwn(int ownerId) {
+		String hql = "FROM Car as car WHERE car.owner.ownerid = ?";
+		//int count = entityM.createQuery(hql).setParameter(1, ownerId);
+		return entityM.createQuery(hql).setParameter(1, ownerId).getResultList();
+		}
 }
