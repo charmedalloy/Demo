@@ -2,7 +2,7 @@ package com.car;
 
 import javax.persistence.*;
 
-//new
+//new test
 @Entity
 public class Car {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
@@ -10,17 +10,18 @@ public class Car {
     private String make;
     private String model;
     private String year;
-    private String color;
-
-    @ManyToOne
+    private String color;    
+    @ManyToOne(optional=false)
+    @JoinColumn(name = "ownerid", referencedColumnName = "ownerid")
     private Owner owner;
 
-    public Car(int id, String make, String model, String year, String color){
+    public Car(int id, String make, String model, String year, String color,int ownerId){
         this.id = id;
         this.make = make;
         this.model = model;
         this.year = year;
         this.color = color;
+        this.owner = owner;
     }
 
     public Car(){}
@@ -64,4 +65,11 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
+    public Owner getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Owner owner) {
+		this.owner = owner;
+	}
 }
